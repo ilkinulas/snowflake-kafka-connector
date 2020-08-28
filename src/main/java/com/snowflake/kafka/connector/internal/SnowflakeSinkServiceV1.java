@@ -641,7 +641,7 @@ class SnowflakeSinkServiceV1 extends Logging implements SnowflakeSinkService
         fileListLock.unlock();
       }
 
-      logInfo("pipe {}, flush pipe: {}", pipeName, fileName);
+      logInfo("pipe {}, flush pipe: {}, size: {}, max file size: {}", pipeName, fileName, buff.getBufferSize(), getFileSize());
     }
 
     private void checkStatus()
